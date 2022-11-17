@@ -1,0 +1,52 @@
+.btn {
+  border-radius: 32px;
+  padding: 18px 24px;
+  transition: background-color 0.5s;
+}
+
+.primary {
+  background: var(--orange);
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.07), 0px 2px 4px rgba(0, 0, 0, 0.07);
+  color: var(--white);
+  border: none;
+}
+
+.primary:hover {
+  background-color: var(--hoverOrange);
+}
+
+.secondary {
+  background: rgba(255, 255, 255, 0.14);
+  border: 2px solid var(--orange);
+  color: var(--orange);
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.07), 0px 2px 4px rgba(0, 0, 0, 0.07);
+  backdrop-filter: blur(8px);
+
+  .arrow {
+    display: none;
+  }
+}
+
+.secondary:hover {
+  background-color: var(--hoverGray);
+  .icon {
+    display: none;
+  }
+  .arrow {
+    display: inline-block;
+    margin-left: 5px;
+  }
+}
+
+.primary:hover {
+  background-color: var(--hoverOrange);
+}
+
+.arrow {
+  font-family: var(--font-secondary);
+  font-size: 21px;
+}
+
+.icon {
+  margin-right: 8px;
+}

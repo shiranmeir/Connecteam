@@ -1,0 +1,20 @@
+.item {
+  border: unset;
+  font-family: var(--font-primary);
+  font-size: 19px;
+  line-height: 19px;
+  background-color: unset;
+  padding: 20px 0;
+  display: flex;
+  text-transform: capitalize;
+}
+
+.itemIcon {
+  padding: 1px 6px;
+}
+
+.item:hover {
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: rgba(0, 152, 218, 0.07);
+}

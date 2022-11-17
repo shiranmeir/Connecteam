@@ -1,0 +1,72 @@
+.section {
+  max-width: 500px;
+  padding: 50px 130px;
+}
+
+.topSec {
+  display: flex;
+}
+
+.icon {
+  text-align: center;
+  margin-top: 13px;
+}
+
+.label {
+  font-family: var(--font-secondary);
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.topTitle {
+  padding: 10px;
+}
+
+.description {
+  margin: 18px 0;
+}
+
+.itemImg {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.atIcon {
+  background: #edd6ff79;
+  background-blend-mode: overlay;
+  border: 4px solid #ffffff;
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  top: 110px;
+  right: 80px;
+}
+
+.fileIcon {
+  background: rgba(255, 214, 234, 0.507);
+  background-blend-mode: overlay;
+  border: 4px solid #ffffff;
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  top: 100px;
+  left: 80px;
+}
+
+.conteiner {
+  display: flex;
+  align-items: center;
+}
+
+.rev {
+  flex-direction: row-reverse;
+}

@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+}
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+
+  .heroIn {
+    padding: 40px 130px;
+  }
+
+  .logo {
+    width: 100%;
+  }
+
+  .title {
+    margin-top: 30px;
+    max-width: 500px;
+  }
+
+  .subtitle {
+    color: var(--white);
+    padding: 32px 0;
+    max-width: 500px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 18px;
+  }
+
+  .scroll {
+    margin-top: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(8px);
+    width: 42px;
+    height: 40px;
+    .smallArrow {
+      display: none;
+    }
+    .bigArrow {
+      display: block;
+    }
+  }
+
+  .scroll:hover {
+    .bigArrow {
+      display: none;
+    }
+    .smallArrow {
+      display: block;
+      text-align: center;
+      padding-top: 8px;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+@import "./globals";
+
+html {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+button,
+button:active,
+button:focus,
+button:hover {
+  outline: transparent;
+}
+
+a,
+a:hover,
+a:active,
+a:visited,
+a:focus {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--primary);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+textarea,
+button {
+  outline: transparent;
+}
+
+form {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-family: var(--font-primary);
+  color: var(--white);
+  font-size: 60px;
+  line-height: 67.84px;
+}
+
+h2 {
+  font-family: var(--font-primary);
+  font-size: 42px;
+  line-height: 42px;
+}
+
+h3 {
+  font-family: var(--font-primary);
+  font-size: 32px;
+  line-height: 32px;
+  text-transform: capitalize;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-secondary);
+  font-size: 19px;
+  line-height: 22.99px;
+  color: var(--gray);
+}
+
+button {
+  all: unset;
+  font-family: var(--font-primary);
+  font-size: 19px;
+}
