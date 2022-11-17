@@ -39,7 +39,11 @@ const Section = ({ item, homeItem, index }) => {
       break;
   }
   return (
-    <div className={`${classes.conteiner} ${index % 2 ? classes.rev : null}`}>
+    <div
+      className={`${classes.conteiner} ${
+        item.title === "Sit et enim" ? classes.rev : null
+      }`}
+    >
       <section className={classes.section}>
         <div className={classes.topSec}>
           <div
