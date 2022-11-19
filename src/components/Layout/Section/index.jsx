@@ -11,13 +11,12 @@ const Section = ({ item, homeItem }) => {
   useEffect(() => {
     const getItemImg = async () => {
       const itemImg = await ItemAPI.getItemImg(
-        item.title.toLowerCase().split(" ").join("-"),
+        item?.title?.toLowerCase().split(" ").join("-"),
         "small"
       );
       setItemImg(itemImg);
     };
     getItemImg();
-    console.log(item);
   }, [item]);
 
   let className = "";

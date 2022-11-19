@@ -1,0 +1,123 @@
+.footer {
+  background-color: var(--bgGray);
+  display: flex;
+  justify-content: center;
+  padding: 64px 0;
+  gap: 40px;
+}
+
+.intro {
+  max-width: 400px;
+
+  h3 {
+    color: var(--orange);
+  }
+
+  p {
+    margin: 24px 0;
+  }
+
+  a {
+    color: var(--orange);
+    font-size: 19px;
+    font-weight: 700;
+    font-family: var(--font-primary);
+  }
+}
+
+.form {
+  max-width: 700px;
+}
+
+.inputConteiner {
+  margin: 18px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.input,
+.select {
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 24px;
+  padding: 16px 24px;
+  width: 280px;
+  color: var(--gray);
+  position: relative;
+}
+
+input:active,
+input:focus {
+  background: #ffffff;
+  border: 1px solid var(--orange);
+  border-radius: 24px;
+}
+
+.btn {
+  border-radius: 32px;
+  padding: 18px 24px;
+  transition: background-color 0.5s;
+  background: var(--orange);
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.07), 0px 2px 4px rgba(0, 0, 0, 0.07);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--hoverOrange);
+}
+
+.inputButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 24px;
+  width: 700px;
+  margin-top: 8px;
+
+  label {
+    all: unset;
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gray);
+    text-align: center;
+    padding: 10px 30px;
+    cursor: pointer;
+  }
+
+  input[type="radio"]:checked + label {
+    background: #ffffff;
+    border: 1px solid var(--orange);
+    border-radius: 24px;
+    color: var(--orange);
+  }
+}
+
+.labelButton {
+  font-family: var(--font-secondary);
+  color: var(--darkGray);
+  font-size: 16px;
+  font-weight: 700px;
+}
+
+input[data-type="textarea"] {
+  width: 700px;
+  height: 160px;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 24px;
+}
+
+input[type="radio"] {
+  position: absolute;
+  visibility: hidden;
+  display: none;
+}

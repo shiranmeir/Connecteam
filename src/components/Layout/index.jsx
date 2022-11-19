@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import HomeAPI from "../../services/home.service";
 import MidNav from "../common/MidNav";
+import Footer from "./Footer";
 import Hero from "./Hero";
 import Item from "./Item/index";
 import classes from "./style.module.scss";
@@ -25,6 +26,7 @@ const Layout = () => {
       {itemsData.items?.map((item, index) => {
         return <Item key={item.name} homeItem={item} items={itemsData.items} />;
       })}
+      <Footer />
     </div>
   );
 };

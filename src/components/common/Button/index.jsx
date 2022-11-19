@@ -20,7 +20,6 @@ const Button = ({ link }) => {
             {link.label}
             <span className={classes.arrow}> →</span>
           </div>
-          {/* <div>{link.icon}</div> */}
         </div>
       </button>
     </a>
