@@ -1,24 +1,7 @@
-import BigAtIcon from "../../../images/AtIcon/BigAtIcon";
-import BigCalendarIcon from "../../../images/CalendarIcon/BigCalendarIcon";
-import BigFileIcon from "../../../images/FileIcon/BigFileIcon";
-import BigUnionIcon from "../../../images/UnionIcon/BigUnionIcon";
 import classes from "./style.module.scss";
+export const API_URL_ICON = process.env.REACT_APP_ICON;
 
 const SectionImg = ({ item, itemImg }) => {
-  let icon = "";
-  let className = "";
-  switch (item.title) {
-    case "Repudiandae":
-      icon = <BigAtIcon />;
-      className = classes.atIcon;
-      break;
-    case "Praesentium aspernatur":
-      icon = <BigFileIcon />;
-      className = classes.fileIcon;
-      break;
-    default:
-      break;
-  }
   return (
     <>
       <div
@@ -32,8 +15,22 @@ const SectionImg = ({ item, itemImg }) => {
       ></div>
       {(item.title === "Repudiandae" ||
         item.title === "Praesentium aspernatur") && (
-        <div className={className}>
-          <div className={classes.icon}>{icon}</div>
+        <div
+          className={
+            item.title === "Repudiandae" ? classes.atIcon : classes.fileIcon
+          }
+        >
+          <div className={classes.icon}>
+            <img
+              className={
+                item.title === "Repudiandae"
+                  ? classes.repudiandae
+                  : classes.praesentiumaspernatur
+              }
+              alt={item.title}
+              src={`${API_URL_ICON}${item.icon}.svg`}
+            />
+          </div>
         </div>
       )}
     </>

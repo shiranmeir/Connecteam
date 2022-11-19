@@ -8,8 +8,21 @@
 }
 
 .icon {
-  text-align: center;
-  margin-top: 13px;
+  padding: 12px;
+  border-radius: 50%;
+  img {
+    height: 37px;
+    width: 37px;
+  }
+}
+
+.doloreIcon {
+  padding: 27px 24px;
+  border-radius: 50%;
+  img {
+    height: 63px;
+    width: 72px;
+  }
 }
 
 .label {
@@ -29,11 +42,17 @@
   margin: 18px 0;
 }
 
-.itemImg {
-  height: 300px;
-  width: 300px;
+.itemImgDolore {
+  height: 510px;
+  width: 510px;
   border-radius: 50%;
-  position: relative;
+  position: absolute;
+  opacity: 0.1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  right: -150px;
+  top: 5px;
 }
 
 .atIcon {
@@ -59,14 +78,74 @@
   height: 60px;
   position: relative;
   top: 100px;
-  left: 80px;
+  right: 300px;
 }
 
 .conteiner {
   display: flex;
   align-items: center;
+  padding: 20px 0;
 }
 
 .rev {
   flex-direction: row-reverse;
+}
+
+.repudiandae {
+  filter: invert(11%) sepia(94%) saturate(7146%) hue-rotate(277deg)
+    brightness(84%) contrast(113%);
+}
+
+.sitatenim {
+  filter: invert(82%) sepia(59%) saturate(3611%) hue-rotate(130deg)
+    brightness(88%) contrast(101%);
+}
+
+.doloreipsum {
+  filter: invert(97%) sepia(0%) saturate(54%) hue-rotate(269deg)
+    brightness(104%) contrast(101%);
+}
+
+.praesentiumaspernatur {
+  filter: invert(10%) sepia(100%) saturate(5872%) hue-rotate(324deg)
+    brightness(94%) contrast(101%);
+}
+
+.linkBtn {
+  cursor: pointer;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.07), 0px 2px 4px rgba(0, 0, 0, 0.07);
+  border-radius: 32px;
+  padding: 18px;
+  color: var(--white);
+}
+
+.itemImg {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+.btnConteiner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.doloreBtn {
+  background: none;
+  border: 2px solid #0098da;
+  color: #0098da;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.07), 0px 2px 4px rgba(0, 0, 0, 0.07);
+  backdrop-filter: blur(8px);
+  border-radius: 32px;
+  padding: 13px 24px 13px 18px;
+
+  img {
+    filter: invert(47%) sepia(70%) saturate(3463%) hue-rotate(170deg)
+      brightness(94%) contrast(101%);
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
 }

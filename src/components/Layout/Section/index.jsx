@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
-import BigAtIcon from "../../../images/AtIcon/BigAtIcon";
-import BigCalendarIcon from "../../../images/CalendarIcon/BigCalendarIcon";
-import BigFileIcon from "../../../images/FileIcon/BigFileIcon";
-import BigUnionIcon from "../../../images/UnionIcon/BigUnionIcon";
 import ItemAPI from "../../../services/item.service";
 import SectionImg from "./SectionImg";
 import classes from "./style.module.scss";
+export const API_URL_ICON = process.env.REACT_APP_ICON;
 
-const Section = ({ item, homeItem, index }) => {
+const Section = ({ item, homeItem }) => {
   const [itemImg, setItemImg] = useState("");
+  const dolore = homeItem.layout === "fullColor";
 
   useEffect(() => {
     const getItemImg = async () => {
@@ -19,64 +17,160 @@ const Section = ({ item, homeItem, index }) => {
       setItemImg(itemImg);
     };
     getItemImg();
+    console.log(item);
   }, [item]);
 
-  let icon = "";
-  switch (item.title) {
-    case "Repudiandae":
-      icon = <BigAtIcon />;
+  let className = "";
+  switch (homeItem.name) {
+    case "repudiandae":
+      className = classes.repudiandae;
       break;
-    case "Sit et enim":
-      icon = <BigUnionIcon />;
+    case "sit-at-enim":
+      className = classes.sitatenim;
       break;
-    case "Dolore ipsum":
-      icon = <BigCalendarIcon />;
+    case "dolore-ipsum":
+      className = classes.doloreipsum;
       break;
-    case "Praesentium aspernatur":
-      icon = <BigFileIcon />;
+    case "praesentium-aspernatur":
+      className = classes.praesentiumaspernatur;
       break;
     default:
       break;
   }
+
   return (
-    <div
-      className={`${classes.conteiner} ${
-        item.title === "Sit et enim" ? classes.rev : null
-      }`}
-    >
-      <section className={classes.section}>
-        <div className={classes.topSec}>
-          <div
-            style={{
-              backgroundColor: `hsla(${item.colorHue},100%, 97%, 1)`,
-              borderRadius: "50%",
-              width: "60px",
-              height: "60px",
-            }}
-          >
-            <div className={classes.icon}>{icon}</div>
-          </div>
-          <div className={classes.topTitle}>
-            <div className={classes.label}>{item.label}</div>
-            <h3 style={{ color: `hsla(${item.colorHue},100%, 50%, 1)` }}>
-              {item.title}
-            </h3>
-          </div>
-        </div>
-        <p className={classes.description}>
-          {item.description?.replace(/(<([^>]+)>)/gi, "")}
-        </p>
-        <button
-          style={{
-            color: `hsla(${item.colorHue},100%, 50%, 1)`,
-            cursor: "pointer",
-          }}
+    <>
+      <div
+        className={`${classes.conteiner} ${
+          item.title === "Sit et enim" ? classes.rev : null
+        }`}
+        style={
+          dolore
+            ? {
+                backgroundColor: `hsla(${item.colorHue},100%, 21%, 1)`,
+                display: "block",
+                position: "relative",
+                textAlign: "-webkit-center",
+                padding: "unset",
+              }
+            : null
+        }
+      >
+        <section
+          style={
+            dolore
+              ? {
+                  maxWidth: "unset",
+                }
+              : null
+          }
+          className={classes.section}
         >
-          {homeItem.linkLabel} →
-        </button>
-      </section>
-      <SectionImg item={item} itemImg={itemImg} />
-    </div>
+          <div
+            style={
+              dolore
+                ? {
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }
+                : null
+            }
+            className={classes.topSec}
+          >
+            <div
+              className={dolore ? classes.doloreIcon : classes.icon}
+              style={
+                dolore
+                  ? {
+                      backgroundColor: `hsla(${item.colorHue},100%, 43%, 1)`,
+                    }
+                  : {
+                      backgroundColor: `hsla(${item.colorHue},100%, 97%, 1)`,
+                    }
+              }
+            >
+              <img
+                className={className}
+                alt={item.name}
+                src={`${API_URL_ICON}${item.icon}.svg`}
+              />
+            </div>
+
+            <div className={classes.topTitle}>
+              <div
+                style={
+                  dolore
+                    ? {
+                        color: `hsla(${item.colorHue},25%, 69%, 1)`,
+                      }
+                    : null
+                }
+                className={classes.label}
+              >
+                {item.label}
+              </div>
+              <h3 style={{ color: `hsla(${item.colorHue},100%, 50%, 1)` }}>
+                {item.title}
+              </h3>
+            </div>
+          </div>
+          <p
+            style={
+              dolore
+                ? {
+                    color: "#FFFFFF",
+                  }
+                : null
+            }
+            className={classes.description}
+          >
+            {item.description?.replace(/(<([^>]+)>)/gi, "")}
+          </p>
+          <div className={dolore ? classes.btnConteiner : null}>
+            <button
+              className={dolore ? classes.linkBtn : null}
+              style={
+                dolore
+                  ? {
+                      backgroundColor: `hsla(${item.colorHue},100%, 50%, 1)`,
+                    }
+                  : {
+                      color: `hsla(${item.colorHue},100%, 43%, 1)`,
+                      cursor: "pointer",
+                    }
+              }
+            >
+              {homeItem.linkLabel} →
+            </button>
+            {homeItem.additionalLinks?.map((link) => {
+              return (
+                <a href={link.href}>
+                  <button className={classes.doloreBtn}>
+                    <span>
+                      <img
+                        alt={link.label}
+                        src={`${API_URL_ICON}${link.icon}.svg`}
+                      />
+                    </span>
+                    {link.label}
+                  </button>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+        {dolore ? (
+          <div
+            className={classes.itemImgDolore}
+            style={{
+              backgroundImage: `url(${itemImg})`,
+            }}
+          ></div>
+        ) : (
+          <SectionImg item={item} itemImg={itemImg} />
+        )}
+      </div>
+    </>
   );
 };
 

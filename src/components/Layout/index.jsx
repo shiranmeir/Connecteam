@@ -23,7 +23,7 @@ const Layout = () => {
       <Hero hero={itemsData.hero} />
       <MidNav className={classes.midnav} items={itemsData.items} />
       {itemsData.items?.map((item, index) => {
-        return <Item key={item.name} homeItem={item} index={index} />;
+        return <Item key={item.name} homeItem={item} items={itemsData.items} />;
       })}
     </div>
   );

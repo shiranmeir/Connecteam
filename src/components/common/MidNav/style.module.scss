@@ -11,10 +11,33 @@
 
 .itemIcon {
   padding: 1px 6px;
+  img {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 .item:hover {
   border-radius: 12px;
   cursor: pointer;
-  background-color: rgba(0, 152, 218, 0.07);
+}
+
+.repudiandae {
+  filter: invert(11%) sepia(94%) saturate(7146%) hue-rotate(277deg)
+    brightness(84%) contrast(113%);
+}
+
+.sitatenim {
+  filter: invert(82%) sepia(59%) saturate(3611%) hue-rotate(130deg)
+    brightness(88%) contrast(101%);
+}
+
+.doloreipsum {
+  filter: invert(47%) sepia(70%) saturate(3463%) hue-rotate(170deg)
+    brightness(94%) contrast(101%);
+}
+
+.praesentiumaspernatur {
+  filter: invert(10%) sepia(100%) saturate(5872%) hue-rotate(324deg)
+    brightness(94%) contrast(101%);
 }
