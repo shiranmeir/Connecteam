@@ -1,8 +1,4 @@
 import { useEffect, useState } from "react";
-import AtIcon from "../../../images/AtIcon/AtIcon";
-import CalendarIcon from "../../../images/CalendarIcon";
-import FileIcon from "../../../images/FileIcon";
-import UnionIcon from "../../../images/UnionIcon";
 import ItemAPI from "../../../services/item.service";
 import classes from "./style.module.scss";
 export const API_URL_ICON = process.env.REACT_APP_ICON;

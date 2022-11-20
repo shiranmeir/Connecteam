@@ -88,3 +88,9 @@ button {
   font-family: var(--font-primary);
   font-size: 19px;
 }
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 42px;
+  }
+}

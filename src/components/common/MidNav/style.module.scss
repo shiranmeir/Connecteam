@@ -41,3 +41,10 @@
   filter: invert(10%) sepia(100%) saturate(5872%) hue-rotate(324deg)
     brightness(94%) contrast(101%);
 }
+
+@media (max-width: 900px) {
+  .item {
+    font-size: 17px;
+    flex: none;
+  }
+}

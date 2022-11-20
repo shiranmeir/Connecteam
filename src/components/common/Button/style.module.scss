@@ -50,3 +50,10 @@
 .icon {
   margin-right: 8px;
 }
+
+@media (max-width: 768px) {
+  .btn {
+    width: -webkit-fill-available;
+    text-align: center;
+  }
+}

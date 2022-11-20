@@ -5,13 +5,17 @@ body {
 .hero {
   width: 100vw;
   height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
 
   .heroIn {
     padding: 40px 130px;
   }
 
   .logo {
-    width: 100%;
+    // width: 100%;
   }
 
   .title {
@@ -54,5 +58,41 @@ body {
       text-align: center;
       padding-top: 8px;
     }
+  }
+}
+.scrollConteiner {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-color: linear-gradient(
+      180deg,
+      rgba(37, 22, 0, 0) 0%,
+      #251600 100%
+    );
+
+    .logo {
+      background-color: rgba(0, 0, 0, 0.2);
+      padding: 24px;
+    }
+    .heroIn {
+      padding: 0;
+    }
+    .title {
+      padding: 0 24px;
+      line-height: 106%;
+    }
+
+    .subtitle {
+      padding: 32px 24px;
+    }
+    .buttons {
+      padding: 0 24px;
+      flex-direction: column;
+    }
+  }
+  .scrollConteiner {
+    text-align: -webkit-center;
   }
 }

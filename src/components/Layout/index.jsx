@@ -26,7 +26,7 @@ const Layout = () => {
       {itemsData.items?.map((item, index) => {
         return <Item key={item.name} homeItem={item} items={itemsData.items} />;
       })}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

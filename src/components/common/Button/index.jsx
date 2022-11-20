@@ -1,6 +1,5 @@
 import classes from "./style.module.scss";
 import IconOne from "../../../images/IconOne/IconOne";
-// import cc from "classcat";
 
 const Button = ({ link }) => {
   return (

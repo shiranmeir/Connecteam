@@ -24,10 +24,6 @@ const Hero = ({ hero }) => {
       className={classes.hero}
       style={{
         backgroundImage: `url(${homeImg})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center center",
-        backgroundAttachment: "fixed",
       }}
     >
       <div className={classes.heroIn}>
@@ -41,12 +37,14 @@ const Hero = ({ hero }) => {
             return <Button key={link.label} link={link} />;
           })}
         </div>
-        <div className={classes.scroll}>
-          <div className={classes.bigArrow}>
-            <ScrollArrow />
-          </div>
-          <div className={classes.smallArrow}>
-            <ScrollArrowHover />
+        <div className={classes.scrollConteiner}>
+          <div className={classes.scroll}>
+            <div className={classes.bigArrow}>
+              <ScrollArrow />
+            </div>
+            <div className={classes.smallArrow}>
+              <ScrollArrowHover />
+            </div>
           </div>
         </div>
       </div>
