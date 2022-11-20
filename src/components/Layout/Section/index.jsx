@@ -40,42 +40,22 @@ const Section = ({ item, homeItem }) => {
   return (
     <>
       <div
-        className={`${classes.conteiner} ${
-          item.title === "Sit et enim" ? classes.rev : null
+        className={`${item.title === "Sit et enim" ? classes.rev : null} ${
+          dolore ? classes.doloreConteiner : classes.conteiner
         }`}
         style={
           dolore
             ? {
+                backgroundImage: `url(${itemImg})`,
                 backgroundColor: `hsla(${item.colorHue},100%, 21%, 1)`,
-                display: "block",
-                position: "relative",
-                textAlign: "-webkit-center",
-                padding: "unset",
               }
             : null
         }
       >
         <section
-          style={
-            dolore
-              ? {
-                  maxWidth: "unset",
-                }
-              : null
-          }
-          className={classes.section}
+          className={`${dolore ? classes.doloreSection : classes.section}`}
         >
-          <div
-            style={
-              dolore
-                ? {
-                    flexDirection: "column",
-                    alignItems: "center",
-                  }
-                : null
-            }
-            className={classes.topSec}
-          >
+          <div className={`${dolore ? classes.doloreTopSec : classes.topSec}`}>
             <div
               className={dolore ? classes.doloreIcon : classes.icon}
               style={
@@ -143,8 +123,11 @@ const Section = ({ item, homeItem }) => {
             </button>
             {homeItem.additionalLinks?.map((link) => {
               return (
-                <a href={link.href}>
-                  <button className={classes.doloreBtn}>
+                <button className={classes.doloreBtn}>
+                  <a
+                    href={link.href}
+                    style={{ color: `hsla(${item.colorHue},100%, 43%, 1)` }}
+                  >
                     <span>
                       <img
                         alt={link.label}
@@ -152,20 +135,13 @@ const Section = ({ item, homeItem }) => {
                       />
                     </span>
                     {link.label}
-                  </button>
-                </a>
+                  </a>
+                </button>
               );
             })}
           </div>
         </section>
-        {dolore ? (
-          <div
-            className={classes.itemImgDolore}
-            style={{
-              backgroundImage: `url(${itemImg})`,
-            }}
-          ></div>
-        ) : (
+        {dolore ? null : ( // ></div> //   }} //     backgroundImage: `url(${itemImg})`, //   style={{ //   className={classes.itemImgDolore} // <div
           <SectionImg item={item} itemImg={itemImg} />
         )}
       </div>

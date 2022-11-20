@@ -3,8 +3,18 @@
   padding: 50px 130px;
 }
 
+.doloreSection {
+  padding: 50px 130px;
+}
+
 .topSec {
   display: flex;
+}
+
+.doloreTopSec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .icon {
@@ -87,6 +97,16 @@
   padding: 20px 0;
 }
 
+.doloreConteiner {
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-position: right;
+  display: block;
+  position: relative;
+  text-align: -webkit-center;
+  padding: unset;
+}
+
 .rev {
   flex-direction: row-reverse;
 }
@@ -147,5 +167,57 @@
     width: 16px;
     height: 16px;
     margin-right: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section,
+  .doloreSection {
+    padding: 24px;
+  }
+
+  .section:nth-of-type(1) {
+    order: 2;
+  }
+  .conteiner {
+    padding: unset;
+    display: block;
+    display: grid;
+  }
+
+  .itemImg {
+    border-radius: unset;
+    height: 400px;
+    width: 100%;
+  }
+  .doloreConteiner {
+    text-align: unset;
+  }
+  .doloreTopSec {
+    align-items: unset;
+  }
+  .doloreIcon {
+    width: 96px;
+    height: 96px;
+    padding: unset;
+    img {
+      height: 48px;
+      width: 43px;
+      padding: 24px;
+    }
+  }
+
+  .btnConteiner {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    button,
+    a {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .icon {
+    padding: 24px;
   }
 }
