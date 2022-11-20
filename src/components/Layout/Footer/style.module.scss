@@ -121,3 +121,33 @@ input[type="radio"] {
   visibility: hidden;
   display: none;
 }
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    padding: 24px;
+  }
+  .inputConteiner {
+    flex-direction: column;
+    align-items: unset;
+    justify-content: unset;
+    flex-wrap: unset;
+
+    .input,
+    .select {
+      width: 100%;
+      padding: 16px 5px;
+    }
+  }
+  .btn {
+    text-align: center;
+  }
+  .inputButtons {
+    width: 100%;
+    flex-direction: column;
+
+    label {
+      width: 82%;
+    }
+  }
+}
