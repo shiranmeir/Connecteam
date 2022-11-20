@@ -1,5 +1,4 @@
 import Button from "../../common/Button";
-import Logo from "../../common/Logo";
 import ScrollArrow from "../../../images/ScrollArrow/ScrollArrow";
 import ScrollArrowHover from "../../../images/ScrollArrow/ScrollArrowHover";
 import { useEffect, useState } from "react";

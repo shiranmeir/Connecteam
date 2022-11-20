@@ -136,11 +136,13 @@ const Section = ({ item, homeItem }) => {
             })}
           </div>
         </section>
-        {dolore ? // <div
-        //   style={{ backgroundImage: `url(${itemImg})` }}
-        //   className={classes.itemImgDolore}
-        // ></div>
-        null : (
+        {dolore ? (
+          <img
+            alt={item.title}
+            src={itemImg}
+            className={classes.itemImgDolore}
+          />
+        ) : (
           <SectionImg item={item} itemImg={itemImg} />
         )}
       </div>

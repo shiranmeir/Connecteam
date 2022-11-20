@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import Section from "../Section";
 import ItemAPI from "../../../services/item.service";
-import classes from "./style.module.scss";
-import MidNav from "../../common/MidNav";
 export const API_URL_ICON = process.env.REACT_APP_ICON;
 
 const Item = ({ key, homeItem, index, items }) => {
