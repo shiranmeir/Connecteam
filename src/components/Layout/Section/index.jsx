@@ -43,14 +43,6 @@ const Section = ({ item, homeItem }) => {
         className={`${item.title === "Sit et enim" ? classes.rev : null} ${
           dolore ? classes.doloreConteiner : classes.conteiner
         }`}
-        style={
-          dolore
-            ? {
-                backgroundImage: `url(${itemImg})`,
-                backgroundColor: `hsla(${item.colorHue},100%, 21%, 1)`,
-              }
-            : null
-        }
       >
         <section
           className={`${dolore ? classes.doloreSection : classes.section}`}
@@ -144,7 +136,11 @@ const Section = ({ item, homeItem }) => {
             })}
           </div>
         </section>
-        {dolore ? null : ( // ></div> //   }} //     backgroundImage: `url(${itemImg})`, //   style={{ //   className={classes.itemImgDolore} // <div
+        {dolore ? // <div
+        //   style={{ backgroundImage: `url(${itemImg})` }}
+        //   className={classes.itemImgDolore}
+        // ></div>
+        null : (
           <SectionImg item={item} itemImg={itemImg} />
         )}
       </div>

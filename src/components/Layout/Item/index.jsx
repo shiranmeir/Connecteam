@@ -19,16 +19,6 @@ const Item = ({ key, homeItem, index, items }) => {
   return (
     <div key={key}>
       <Section item={itemData} homeItem={homeItem} index={index} />
-      <div className={classes.abs}>
-        <div className={classes.logoAbs}>
-          <img
-            className={classes.logo}
-            alt="logo"
-            src={`${API_URL_ICON}logo.svg`}
-          />
-        </div>
-        <MidNav className={classes.midnavAbs} items={items} />
-      </div>
     </div>
   );
 };

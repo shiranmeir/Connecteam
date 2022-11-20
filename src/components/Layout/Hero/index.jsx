@@ -5,9 +5,11 @@ import ScrollArrowHover from "../../../images/ScrollArrow/ScrollArrowHover";
 import { useEffect, useState } from "react";
 import HomeAPI from "../../../services/home.service";
 import classes from "./style.module.scss";
+import { API_URL_ICON } from "../../common/MidNav/MidNavItem";
 
 const Hero = ({ hero }) => {
   const [homeImg, setHomeImg] = useState("");
+  const [colorChange, setColorchange] = useState(false);
 
   useEffect(() => {
     const getHomeImg = async () => {
@@ -19,6 +21,15 @@ const Hero = ({ hero }) => {
     getHomeImg();
   }, []);
 
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 10) {
+      setColorchange(true);
+    } else {
+      setColorchange(false);
+    }
+  };
+  window.addEventListener("scroll", changeNavbarColor);
+
   return (
     <div
       className={classes.hero}
@@ -26,10 +37,14 @@ const Hero = ({ hero }) => {
         backgroundImage: `url(${homeImg})`,
       }}
     >
+      <div className={colorChange ? classes.colorChange : classes.logo}>
+        <img
+          className={classes.logoImg}
+          alt="logo"
+          src={`${API_URL_ICON}logo.svg`}
+        />
+      </div>
       <div className={classes.heroIn}>
-        <div className={classes.logo}>
-          <Logo />
-        </div>
         <h1 className={classes.title}>{hero?.title}</h1>
         <p className={classes.subtitle}>{hero?.subtitle}</p>
         <div className={classes.buttons}>

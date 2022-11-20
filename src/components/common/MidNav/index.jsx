@@ -1,4 +1,4 @@
-import MidNavItem from "./MidVanItem";
+import MidNavItem from "./MidNavItem";
 
 const MidNav = ({ items, className }) => {
   return (

@@ -15,11 +15,39 @@ body {
   }
 
   .logo {
-    // width: 100%;
+    position: fixed;
+    top: 10px;
+    height: 78px;
+    background-color: transparent;
+    padding: 40px 130px;
+  }
+
+  .logoImg {
+    height: 60px;
+    filter: invert(1);
+  }
+
+  .colorChange {
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+    height: 78px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.07);
+    backdrop-filter: blur(12px);
+    padding: 0px 130px;
+    transition: background-color 0.1s;
+
+    .logoImg {
+      height: 42px;
+      filter: unset;
+      padding: 20px;
+    }
   }
 
   .title {
-    margin-top: 30px;
+    margin-top: 80px;
     max-width: 500px;
   }
 
@@ -73,12 +101,19 @@ body {
     );
 
     .logo {
+      position: unset;
       background-color: rgba(0, 0, 0, 0.2);
       padding: 24px;
+      height: unset;
     }
+    .logoImg {
+      height: 37px;
+    }
+
     .heroIn {
       padding: 0;
     }
+
     .title {
       padding: 0 24px;
       line-height: 106%;
@@ -90,6 +125,9 @@ body {
     .buttons {
       padding: 0 24px;
       flex-direction: column;
+    }
+    .colorChange {
+      padding: unset;
     }
   }
   .scrollConteiner {

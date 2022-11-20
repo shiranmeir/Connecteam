@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ItemAPI from "../../../services/item.service";
 import classes from "./style.module.scss";
 export const API_URL_ICON = process.env.REACT_APP_ICON;
 
 const MidNavItem = ({ item }) => {
   const [itemData, setItemData] = useState({});
+  const el = useRef(null);
 
   useEffect(() => {
     const getItemData = async () => {
@@ -13,6 +14,10 @@ const MidNavItem = ({ item }) => {
     };
     getItemData();
   }, [item]);
+
+  useEffect(() => {
+    el.current.style.setProperty("--item-color", itemData.colorHue);
+  }, [itemData]);
 
   let className = "";
   switch (item.name) {
@@ -33,15 +38,7 @@ const MidNavItem = ({ item }) => {
   }
 
   return (
-    <button
-      className={classes.item}
-      style={{
-        color: `hsla(${itemData.colorHue},100%, 50%, 1)`,
-        "&:hover": {
-          backgroundColor: `hsla(${itemData.colorHue},100%, 50%, 0.07)`,
-        },
-      }}
-    >
+    <button ref={el} className={classes.item}>
       <div className={classes.itemIcon}>
         <img
           className={className}
