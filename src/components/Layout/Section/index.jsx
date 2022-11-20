@@ -43,6 +43,14 @@ const Section = ({ item, homeItem }) => {
         className={`${item.title === "Sit et enim" ? classes.rev : null} ${
           dolore ? classes.doloreConteiner : classes.conteiner
         }`}
+        style={
+          dolore
+            ? {
+                backgroundColor: `hsla(${item.colorHue},100%, 21%, 1)`,
+                overflow: "hidden",
+              }
+            : null
+        }
       >
         <section
           className={`${dolore ? classes.doloreSection : classes.section}`}
@@ -100,7 +108,7 @@ const Section = ({ item, homeItem }) => {
           {dolore && <div className={classes.line}></div>}
           <div className={dolore ? classes.btnConteiner : null}>
             <button
-              className={dolore ? classes.linkBtn : null}
+              className={dolore ? classes.doloreLinkBtn : classes.linkBtn}
               style={
                 dolore
                   ? {

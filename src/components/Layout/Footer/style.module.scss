@@ -44,9 +44,8 @@
   border: 1px solid #eaeaea;
   border-radius: 24px;
   padding: 16px 24px;
-  width: 280px;
+  width: 285px;
   color: var(--gray);
-  position: relative;
 }
 
 input:active,
@@ -109,7 +108,7 @@ input:focus {
 }
 
 input[data-type="textarea"] {
-  width: 700px;
+  width: 660px;
   height: 160px;
   background: #ffffff;
   border: 1px solid #eaeaea;
@@ -120,6 +119,23 @@ input[type="radio"] {
   position: absolute;
   visibility: hidden;
   display: none;
+}
+
+.labelInput {
+  position: absolute;
+  top: -8px;
+  left: 15px;
+  font-size: 13px;
+  color: black;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+}
+
+input:active,
+input:focus {
+  .labelInput {
+    color: var(--orange);
+  }
 }
 
 @media (max-width: 768px) {

@@ -34,10 +34,7 @@ const FormField = ({ field, index, userChangeHandler, userInput }) => {
           </div>
         </div>
       ) : (
-        <>
-          {/* {field.name === "Facere ipsa quod" ? null : (
-            <div className={classes.labelInput}>{field.name}</div>
-          )} */}
+        <div style={{ position: "relative" }}>
           <input
             placeholder={
               field.name === "Facere ipsa quod" && "Facere ipsa quod"
@@ -48,7 +45,10 @@ const FormField = ({ field, index, userChangeHandler, userInput }) => {
             onChange={(e) => userChangeHandler(e, index)}
             data-type={field.type}
           />
-        </>
+          {field.name === "Facere ipsa quod" ? null : (
+            <label className={classes.labelInput}>{field.name}</label>
+          )}
+        </div>
       )}
     </>
   );
