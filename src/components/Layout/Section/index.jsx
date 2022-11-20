@@ -105,6 +105,7 @@ const Section = ({ item, homeItem }) => {
           >
             {item.description?.replace(/(<([^>]+)>)/gi, "")}
           </p>
+          {dolore && <div className={classes.line}></div>}
           <div className={dolore ? classes.btnConteiner : null}>
             <button
               className={dolore ? classes.linkBtn : null}
@@ -123,20 +124,22 @@ const Section = ({ item, homeItem }) => {
             </button>
             {homeItem.additionalLinks?.map((link) => {
               return (
-                <button className={classes.doloreBtn}>
-                  <a
-                    href={link.href}
-                    style={{ color: `hsla(${item.colorHue},100%, 43%, 1)` }}
-                  >
-                    <span>
-                      <img
-                        alt={link.label}
-                        src={`${API_URL_ICON}${link.icon}.svg`}
-                      />
-                    </span>
-                    {link.label}
-                  </a>
-                </button>
+                <>
+                  <button className={classes.doloreBtn}>
+                    <a
+                      href={link.href}
+                      style={{ color: `hsla(${item.colorHue},100%, 43%, 1)` }}
+                    >
+                      <span>
+                        <img
+                          alt={link.label}
+                          src={`${API_URL_ICON}${link.icon}.svg`}
+                        />
+                      </span>
+                      {link.label}
+                    </a>
+                  </button>
+                </>
               );
             })}
           </div>
