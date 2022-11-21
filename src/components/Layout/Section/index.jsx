@@ -115,16 +115,6 @@ const Section = ({ item, homeItem }) => {
             <button
               ref={link}
               className={dolore ? classes.doloreLinkBtn : classes.linkBtn}
-              // style={
-              //   dolore
-              //     ? {
-              //         backgroundColor: `hsla(${item.colorHue},100%, 50%, 1)`,
-              //       }
-              //     : {
-              //         color: `hsla(${item.colorHue},100%, 43%, 1)`,
-              //         cursor: "pointer",
-              //       }
-              // }
             >
               {homeItem.linkLabel} →
             </button>
