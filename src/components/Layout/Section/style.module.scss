@@ -73,9 +73,9 @@
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  position: relative;
-  top: 110px;
-  right: 80px;
+  position: absolute;
+  top: 226px;
+  right: 20px;
 }
 
 .fileIcon {
@@ -86,9 +86,22 @@
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  position: relative;
-  top: 100px;
-  right: 300px;
+  position: absolute;
+  top: 210px;
+  right: 232px;
+}
+
+.unionIcon {
+  background: rgba(214, 252, 255, 0.438);
+  background-blend-mode: overlay;
+  border: 4px solid #ffffff;
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 210px;
+  right: 232px;
 }
 
 .conteiner {
@@ -235,10 +248,17 @@
     }
   }
   .icon {
-    padding: 24px;
+    padding: 12px;
   }
   .itemImgDolore {
     width: 800px;
     height: 800px;
+  }
+  .atIcon,
+  .fileIcon,
+  .unionIcon {
+    border-radius: 99px 0px 0px 99px;
+    top: 55px;
+    right: 0px;
   }
 }

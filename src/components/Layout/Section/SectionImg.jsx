@@ -3,7 +3,7 @@ export const API_URL_ICON = process.env.REACT_APP_ICON;
 
 const SectionImg = ({ item, itemImg }) => {
   return (
-    <>
+    <div style={{ position: "relative" }}>
       <div
         className={classes.itemImg}
         style={{
@@ -13,11 +13,14 @@ const SectionImg = ({ item, itemImg }) => {
           backgroundPosition: "center center",
         }}
       ></div>
-      {(item.title === "Repudiandae" ||
-        item.title === "Praesentium aspernatur") && (
+      {item.title !== "Dolore ipsum" && (
         <div
           className={
-            item.title === "Repudiandae" ? classes.atIcon : classes.fileIcon
+            item.title === "Repudiandae"
+              ? classes.atIcon
+              : item.title === "Praesentium aspernatur"
+              ? classes.fileIcon
+              : classes.unionIcon
           }
         >
           <div className={classes.icon}>
@@ -25,7 +28,9 @@ const SectionImg = ({ item, itemImg }) => {
               className={
                 item.title === "Repudiandae"
                   ? classes.repudiandae
-                  : classes.praesentiumaspernatur
+                  : item.title === "Praesentium aspernatur"
+                  ? classes.praesentiumaspernatur
+                  : classes.sitatenim
               }
               alt={item.title}
               src={`${API_URL_ICON}${item.icon}.svg`}
@@ -33,7 +38,7 @@ const SectionImg = ({ item, itemImg }) => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
