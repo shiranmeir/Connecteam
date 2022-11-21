@@ -1,17 +1,26 @@
 import classes from "./style.module.scss";
+export const API_URL_ICON = process.env.REACT_APP_ICON;
 
 const FormField = ({ field, index, userChangeHandler, userInput }) => {
   return (
     <>
       {field.layout === "select" ? (
-        <select
-          className={classes.select}
-          onChange={(e) => userChangeHandler(e, index)}
-        >
-          {field.options.map((option) => {
-            return <option value={option.label}>{option.label}</option>;
-          })}
-        </select>
+        <div style={{ position: "relative" }}>
+          <select
+            className={classes.select}
+            onChange={(e) => userChangeHandler(e, index)}
+          >
+            {field.options.map((option) => {
+              return <option value={option.label}>{option.label}</option>;
+            })}
+          </select>
+
+          <img
+            className={classes.selectIcon}
+            alt={"select"}
+            src={`${API_URL_ICON}arrow-select.svg`}
+          />
+        </div>
       ) : field.layout === "buttons" ? (
         <div>
           <label className={classes.labelButton}>{field.name}</label>

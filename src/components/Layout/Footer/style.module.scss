@@ -46,6 +46,7 @@
   padding: 16px 24px;
   width: 285px;
   color: var(--gray);
+  cursor: pointer;
 }
 
 input:active,
@@ -136,6 +137,12 @@ input:focus {
   .labelInput {
     color: var(--orange);
   }
+}
+
+.selectIcon {
+  position: absolute;
+  top: 25px;
+  right: 20px;
 }
 
 @media (max-width: 768px) {
