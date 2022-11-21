@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ItemAPI from "../../../services/item.service";
 import SectionImg from "./SectionImg";
 import classes from "./style.module.scss";
@@ -7,6 +7,11 @@ export const API_URL_ICON = process.env.REACT_APP_ICON;
 const Section = ({ item, homeItem }) => {
   const [itemImg, setItemImg] = useState("");
   const dolore = homeItem.layout === "fullColor";
+  const link = useRef(null);
+
+  useEffect(() => {
+    link.current.style.setProperty("--link-color", item.colorHue);
+  }, [item]);
 
   useEffect(() => {
     const getItemImg = async () => {
@@ -108,17 +113,18 @@ const Section = ({ item, homeItem }) => {
           {dolore && <div className={classes.line}></div>}
           <div className={dolore ? classes.btnConteiner : null}>
             <button
+              ref={link}
               className={dolore ? classes.doloreLinkBtn : classes.linkBtn}
-              style={
-                dolore
-                  ? {
-                      backgroundColor: `hsla(${item.colorHue},100%, 50%, 1)`,
-                    }
-                  : {
-                      color: `hsla(${item.colorHue},100%, 43%, 1)`,
-                      cursor: "pointer",
-                    }
-              }
+              // style={
+              //   dolore
+              //     ? {
+              //         backgroundColor: `hsla(${item.colorHue},100%, 50%, 1)`,
+              //       }
+              //     : {
+              //         color: `hsla(${item.colorHue},100%, 43%, 1)`,
+              //         cursor: "pointer",
+              //       }
+              // }
             >
               {homeItem.linkLabel} →
             </button>
